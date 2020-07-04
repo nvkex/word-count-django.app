@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class = "display-4">Count</h1> 
+    <a href = "{% url 'home' %}" class = "text-secondary">Count another text</a>
+    <p class = "my-3">
+        <span class = "bg-danger text-white py-2 px-2">
+            {{ wordcount}}
+        </span>
+        <br><br>
+        {% for word, counttotal in worddict %}
+            <span>
+                <span class = "bg-success text-white py-1 px-1">{{ counttotal }}</span><span class = "bg-info text-white py-1 px-1">{{ word }}</span>
+            </span>
+        {% endfor %}
+    </p>
+    <p class = "my-2">Text:
+        <p class = "text-secondary">
+            {{ fulltext }}
+        </p>
+    </p>
+
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class = "display-4">Word Count</h1>
+    <p class = "text-info">Lets count some words..!</p>
+    <form action = "{% url 'count' %}">
+        <textarea cols = "40" rows = "5" name = "fulltext" class = "form-control"></textarea> 
+        <br>
+        <button type = "submit" class = "btn btn-primary">Count</button>
+    </form>
+    <hr>
+    <a href = "{% url 'about' %}" class = "text-info py-2 px-2">About</a>
+
+{% endblock %}
+
